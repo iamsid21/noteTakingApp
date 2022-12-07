@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<title>Comments</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hey There 🖐🏻 </h1>
+        <p>Here's the list of all the notes of yours</p>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let index=0; index < comments.length ; index++ ) { %>
+                    <tr>
+                        <th scope="row">
+                            <%= index+1 %>
+                        </th>
+                        <td>
+                            <%= comments[index].username %>
+                        </td>
+                        <td>
+                            <%= comments[index].comment %>
+                        </td>
+                        <td>
+                            <a href="/comments/<%= comments[index].id %> ">Details</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+        <a href="/comments/new">
+            <button type="button" class="btn btn-primary bg-gradient ">Create A Note </button>
+        </a>
+    </div>
+</body>
+
+</html>

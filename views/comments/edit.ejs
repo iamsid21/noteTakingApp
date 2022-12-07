@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Edit a comment</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4>
+            <%= comment.username %> <span class="form-control-sm">
+                    
+                </span> 
+        </h4>
+        <!-- It is POST req, but it was working of PATCH  but at the end it will be requested as PATCH request -->
+        <form action="/comments/<%= id %>?_method=PATCH" method="POST">
+            <textarea name="comment" id="" rows="3"><%= comment.comment %></textarea>
+            <button type="submit">Save</button>
+        </form>
+        <br>
+        <!-- It is POST req, but it was working of DELETE but at the end it will be requested as DELETE request -->
+        <form action="/comments/<%= id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-primary bg-gradient">Delete</button>
+        </form>
+        <br>
+        <a href="/comments/<%= id %>">
+            <!-- by default get req -->
+            <button type="button" class="btn btn-primary bg-gradient ">Go Back </button>
+        </a>
+    </div>
+</body>
+
+</html>

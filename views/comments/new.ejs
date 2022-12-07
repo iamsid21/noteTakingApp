@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<title>New Comments</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>From here you can add new Notes </h1>
+        <form action="/comments" method="post">
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Title of Note</label>
+                <input name="username" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description of Note</label>
+                <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add</button>
+
+        </form>
+        <br>
+        <a href="/comments">
+            <!-- by default get req -->
+            <button type="button"  class="btn btn-primary bg-dark ">Go Back </button>
+        </a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<title>Show Comments</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Showing a Note<!--- id #<span class="form-control-sm">
+            
+        </span> --->
+        </h1>
+        <h6>Title of a note:</h6>  
+        <h4><%= comment.username %>
+        </h4>
+        <h6>Description of a note:</h6> 
+        <h4><%= comment.comment %></h4>
+        <a href="/comments">
+            <!-- by default get req -->
+            <button type="button" class="btn btn-primary bg-gradient ">Go Back </button>
+        </a>
+    </div>
+    <br>
+    <div class="container">
+        <a href="/comments/<%= id %>/edit">
+        <button type="button" class="btn btn-primary bg-dark ">Edit</button>
+        </a>
+    </div>
+</body>
+
+</html>
