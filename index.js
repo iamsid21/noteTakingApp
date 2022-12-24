@@ -19,7 +19,7 @@ app.use(express.json());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Our Yosho-Database
+// Initial Local Database
 let comments = [
     {
         id: uuidv(),
@@ -74,7 +74,7 @@ app.post('/comments', (req, res) => {
 app.patch('/comments/:id', (req, res) => {
     const {id} = req.params ;
     const newComment = req.body.comment ;
-    c(newComment) ;
+    // c(newComment) ;
     let oldComment = comments.find(c => c.id === id) ;
     oldComment.comment = newComment ;
     res.redirect('/comments/')
