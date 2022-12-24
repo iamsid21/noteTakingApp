@@ -1,17 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../res/indexStyle.css">
-<title>Comments</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    <style>
+    .loader {
+        width: 48px;
+        height: 48px;
+        margin: auto;
+        position: relative;
+      }
+    
+      .body {
+        background-color: #f08080;
+        border: #f08080;
+        border-radius: 1px;
+      }
+      
+      .loader:before {
+        content: '';
+        width: 48px;
+        height: 5px;
+        background: #f0808050;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        border-radius: 50%;
+        animation: shadow324 0.5s linear infinite;
+      }
+      
+      .loader:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #f08080;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        animation: jump7456 0.5s linear infinite;
+      }
+      
+      @keyframes jump7456 {
+        15% {
+          border-bottom-right-radius: 3px;
+        }
+      
+        25% {
+          transform: translateY(9px) rotate(22.5deg);
+        }
+      
+        50% {
+          transform: translateY(18px) scale(1, .9) rotate(45deg);
+          border-bottom-right-radius: 40px;
+        }
+      
+        75% {
+          transform: translateY(9px) rotate(67.5deg);
+        }
+      
+        100% {
+          transform: translateY(0) rotate(90deg);
+        }
+      }
+      
+      @keyframes shadow324 {
+      
+        0%,
+          100% {
+          transform: scale(1, 1);
+        }
+      
+        50% {
+          transform: scale(1.2, 1);
+        }
+      }
+      </style>
+<title>To Do List | Home </title>
 </head>
 
 <body onload="loadFunc()">
-    <div class="loader"></div>
+    <div class="loader" id="loaderId"></div>
     <div class="container">
         <h1>Hey There 🖐🏻 </h1>
         <p>Here's the list of all the notes of yours</p>
@@ -51,7 +124,7 @@
         </a>
     </div>
     <script>
-        var load = document.getElementById("loader") ;
+        var load = document.getElementById("loaderId") ;
         function loadFunc() {
             load.style.display = 'none' ; 
         }
