@@ -90,27 +90,6 @@ app.delete('/comments/:id', (req, res) => {
     res.redirect('/comments/')
 })
 
-app.get('/tacos', (req, res) => { 
-    res.send("GET /tacos response")
-})
-
-app.get('/tacos', (req, res) => {
-    res.send("GET /tacos response")
-})
-
-app.post('/tacos', (req, res) => {
-    // const {Helo, Bye} = req.body ;
-    const bodi = req.body;
-    console.log(typeof req.body);
-    var ar = [];
-    for (const key in bodi) {
-        console.log(`${key} : ${bodi[key]}`);
-        ar.push(key);
-    }
-    // c(req.body) ;
-    res.send(`${ar}`)
-})
-
 app.get('/' , (req, res) => {
     res.redirect('/comments') ;
 })
